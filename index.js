@@ -1,11 +1,14 @@
 const Discord = require("discord.js")
 require("dotenv").config()
 
+
+
 const client = new Discord.Client({
     intents:[
         "Guilds",
         "GuildMessages",
-        "MessageContent"
+        "MessageContent",
+        "GuildMembers"
     ]
 })
 
@@ -45,6 +48,13 @@ client.on("messageCreate", (message) => {
         
     }
 
+})
+
+const welcomeChannelId = "1011930095507750912"
+
+client.on("guildMemberAdd", (member) => {
+    member.guild.channels.cache.get(welcomeChannelId).send(`<@${member.id}> Welcome to the server!`)
+    member.channel.send("https://c.tenor.com/TTUYiUL3h5kAAAAC/goku-son.gif")
 })
 
 client.login(process.env.TOKEN)
