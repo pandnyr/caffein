@@ -12,15 +12,32 @@ const client = new Discord.Client({
     ]
 })
 
-client.on("ready", () => {
-    console.log(`Logged in as ${client.user.tag}`)
-})
+let bot = {
+    client,
+    prefix: "!",
+    owners: ["672896669058203726"]
+}
 
-client.on("messageCreate", (message) => {
-    if (message.content == "hi"){
-        message.reply("Hello There!")
-        message.react("👋🏻")
-    }
+client.commands = new Discord.Collection()
+client.events = new Discord.Collection()
+
+client.loadEvents = (bot, reload) => require("./handlers/events")(bot, reload)
+client.loadCommands = (bot, reload) => require("./handlers/commands")(bot, reload)
+
+client.loadEvents(bot, false)
+client.loadCommands(bot, false)
+
+module.exports = bot
+
+// client.on("ready", () => {
+//     console.log(`Logged in as ${client.user.tag}`)
+// })
+
+ client.on("messageCreate", (message) => {
+     if (message.content == "hi"){
+         message.reply("Hello There!")
+         message.react("👋🏻")
+     }
     else if (message.content == "hello"){
         message.reply("Hello mate!")
         message.react("👋🏻")
@@ -46,7 +63,7 @@ client.on("messageCreate", (message) => {
         message.channel.send("-DARY!")
         message.channel.send("https://c.tenor.com/nJ3EeUPhVKkAAAAC/barny-stinson.gif")
         
-    }
+  }
 
 })
 
