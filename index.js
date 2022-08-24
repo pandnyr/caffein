@@ -54,7 +54,7 @@ const welcomeChannelId = "1011930095507750912"
 
 client.on("guildMemberAdd", (member) => {
     member.guild.channels.cache.get(welcomeChannelId).send(`<@${member.id}> Welcome to the server!`)
-    member.channel.send("https://c.tenor.com/TTUYiUL3h5kAAAAC/goku-son.gif")
+    member.guild.channels.cache.get(welcomeChannelId).send(" https://c.tenor.com/TTUYiUL3h5kAAAAC/goku-son.gif")
 })
 
 client.login(process.env.TOKEN)
