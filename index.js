@@ -1,14 +1,16 @@
 const Discord = require("discord.js")
 require("dotenv").config()
+const { joinVoiceChannel } = require("@discordjs/voice")
 
-
+const ytdl = require('ytdl-core')
 
 const client = new Discord.Client({
     intents:[
         "Guilds",
         "GuildMessages",
         "MessageContent",
-        "GuildMembers"
+        "GuildMembers",
+        "GuildVoiceStates"
     ]
 })
 
@@ -67,6 +69,9 @@ module.exports = bot
 
 })
 
+//////////// MUSIC /////////////
+
+//////////////////////////
 const welcomeChannelId = "1011930095507750912"
 
 client.on("guildMemberAdd", (member) => {
@@ -79,7 +84,7 @@ client.slashcommands = new Discord.Collection()
 
 client.loadSlashCommands = (bot, reload) => require("./handlers/slashcommands")(bot, reload)
 client.loadSlashCommands(bot, false)
-
+ 
 client.on("interactionCreate", (interaction) => {
     if (!interaction.isCommand()) return 
     if (!interaction.inGuild()) return interaction.reply("This command can only be used in a server")
