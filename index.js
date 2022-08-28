@@ -84,6 +84,25 @@ client.on("messageCreate", async message => {
     const feet = new Discord.EmbedBuilder().setTitle('NSFW')
     const doujin = new Discord.EmbedBuilder().setTitle('NSFW')
     const foxgirl = new Discord.EmbedBuilder().setTitle('NSFW')
+    const femdom = new Discord.EmbedBuilder().setTitle('NSFW')
+    const glasses = new Discord.EmbedBuilder().setTitle('NSFW')
+    const netorare = new Discord.EmbedBuilder().setTitle('NSFW')
+    const maid = new Discord.EmbedBuilder().setTitle('NSFW')
+    const orgy = new Discord.EmbedBuilder().setTitle('NSFW')
+    const pussy = new Discord.EmbedBuilder().setTitle('NSFW')
+    const panties = new Discord.EmbedBuilder().setTitle('NSFW')
+    const school = new Discord.EmbedBuilder().setTitle('NSFW')
+    const succubus = new Discord.EmbedBuilder().setTitle('NSFW')
+    const tentacles = new Discord.EmbedBuilder().setTitle('NSFW')
+    const uglybastard = new Discord.EmbedBuilder().setTitle('NSFW')
+    const uniform = new Discord.EmbedBuilder().setTitle('NSFW')
+    const yuri = new Discord.EmbedBuilder().setTitle('NSFW')
+    const zettaryouiki = new Discord.EmbedBuilder().setTitle('NSFW')
+    const neko = new Discord.EmbedBuilder().setTitle('NSFW')
+    const sfwwallpaper = new Discord.EmbedBuilder().setTitle('NSFW')
+    const sfwwallpapermobile = new Discord.EmbedBuilder().setTitle('NSFW')
+    const nsfwwallpaper = new Discord.EmbedBuilder().setTitle('NSFW')
+    const nsfwwallpapermobile = new Discord.EmbedBuilder().setTitle('NSFW')
 
 
     var command = message.content.toLowerCase().slice(bot.prefix.length)
@@ -93,15 +112,15 @@ client.on("messageCreate", async message => {
 
 
     if (command == 'hentai'){
-        hentai.setImage(await akaneko.nsfw.hentai()).setColor('Red').setDescription("Your hentai is here!")
+        hentai.setImage(await akaneko.nsfw.hentai()).setColor('Random').setDescription("Your hentai is here!")
         message.channel.send({embeds: [hentai]})
     }
     else if (command == 'ass'){
-        ass.setImage(await akaneko.nsfw.ass()).setColor('Red').setDescription("I know you like anime ass~ uwu")
+        ass.setImage(await akaneko.nsfw.ass()).setColor('Random').setDescription("I know you like anime ass~ uwu")
         message.channel.send({embeds: [ass]})
     }
     else if (command == 'cum'){
-        cum.setImage(await akaneko.nsfw.cum()).setColor('Red').setDescription("Basically sticky white stuff that is usually milked from sharpies.")
+        cum.setImage(await akaneko.nsfw.cum()).setColor('Random').setDescription("Basically sticky white stuff that is usually milked from sharpies.")
         message.channel.send({embeds: [cum]})
     }
     else if (command == 'thighs'){
@@ -109,15 +128,15 @@ client.on("messageCreate", async message => {
         message.channel.send({embeds: [thighs]})
     }
     else if (command == 'masturbation'){
-        masturbation.setImage(await akaneko.nsfw.masturbation()).setColor('Blurple').setDescription("Solo Queue in CSGO!")
+        masturbation.setImage(await akaneko.nsfw.masturbation()).setColor('Random').setDescription("Solo Queue in CSGO!")
         message.channel.send({embeds: [masturbation]})
     }
     else if (command == 'gifs'){
-        gifs.setImage(await akaneko.nsfw.gifs()).setColor('DarkPurple').setDescription("Basically an animated image, so yes :3")
+        gifs.setImage(await akaneko.nsfw.gifs()).setColor('Random').setDescription("Basically an animated image, so yes :3")
         message.channel.send({embeds: [gifs]})
     }
     else if (command == 'foxgirl'){
-        foxgirl.setImage(await akaneko.nsfw.foxgirl()).setColor('DarkVividPink').setDescription("Girl's that are wannabe foxes, yes")
+        foxgirl.setImage(await akaneko.nsfw.foxgirl()).setColor('Random').setDescription("Girl's that are wannabe foxes, yes")
         message.channel.send({embeds: [foxgirl]})
     }
     else if (command == 'bdsm'){
@@ -136,8 +155,86 @@ client.on("messageCreate", async message => {
         feet.setImage(await akaneko.nsfw.feet()).setColor('Random').setDescription("So you like smelly feet huh?")
         message.channel.send({embeds: [feet]})
     }
-
-
+    else if (command == 'femdom'){
+        femdom.setImage(await akaneko.nsfw.femdom()).setColor('Random').setDescription("Female Domination?")
+        message.channel.send({embeds: [femdom]})
+    }
+    else if (command == 'glasses'){
+        glasses.setImage(await akaneko.nsfw.glasses()).setColor('Random').setDescription("Girls that wear glasses, uwu~")
+        message.channel.send({embeds: [glasses]})
+    }
+    else if (command == 'netorare'){
+        netorare.setImage(await akaneko.nsfw.netorare()).setColor('Random').setDescription("Wow, I won't even question your fetishes.")
+        message.channel.send({embeds: [netorare]})
+    }
+    else if (command == 'maid'){
+        maid.setImage(await akaneko.nsfw.maid()).setColor('Random').setDescription("Maids, Maid Uniforms, etc, you know what maids are :3")
+        message.channel.send({embeds: [maid]})
+    }
+    else if (command == 'orgy'){
+        orgy.setImage(await akaneko.nsfw.orgy()).setColor('Random').setDescription("Group Lewd Acts")
+        message.channel.send({embeds: [orgy]})
+    }
+    else if (command == 'pussy'){
+        pussy.setImage(await akaneko.nsfw.pussy()).setColor('Random').setDescription("The genitals of a female, or a cat, you give the meaning.")
+        message.channel.send({embeds: [pussy]})
+    }
+    else if (command == 'panties'){
+        panties.setImage(await akaneko.nsfw.panties()).setColor('Random').setDescription("I mean... just why? You like underwear?")
+        message.channel.send({embeds: [panties]})
+    }
+    else if (command == 'school'){
+        school.setImage(await akaneko.nsfw.school()).setColor('Random').setDescription("School Uniforms!~ Yatta~!")
+        message.channel.send({embeds: [school]})
+    }
+    else if (command == 'succubus'){
+        succubus.setImage(await akaneko.nsfw.succubus()).setColor('Random').setDescription("Spooky Succubus, oh I'm so scared~ Totally don't suck me~")
+        message.channel.send({embeds: [succubus]})
+    }
+    else if (command == 'tentacles'){
+        tentacles.setImage(await akaneko.nsfw.tentacles()).setColor('Random').setDescription("I'm sorry but, why do they look like intestines?")
+        message.channel.send({embeds: [tentacles]})
+    }
+    else if (command == 'uglybastard'){
+        uglybastard.setImage(await akaneko.nsfw.uglyBastard()).setColor('Random').setDescription("The one thing most of us can all agree to hate :)")
+        message.channel.send({embeds: [uglybastard]})
+    }
+    else if (command == 'uniform'){
+        uniform.setImage(await akaneko.nsfw.uniform()).setColor('Random').setDescription("Military, Konbini, Work, Nurse Uniforms, etc!~ Sexy~")
+        message.channel.send({embeds: [uniform]})
+    }
+    else if (command == 'yuri'){
+        yuri.setImage(await akaneko.nsfw.yuri()).setColor('Random').setDescription("Girls on Girls, and Girl's only!<3")
+        message.channel.send({embeds: [yuri]})
+    }
+    else if (command == 'zettaryouiki'){
+        zettaryouiki.setImage(await akaneko.nsfw.zettaiRyouiki()).setColor('Random').setDescription("That one part of the flesh being squeeze in thigh-highs~<3")
+        message.channel.send({embeds: [zettaryouiki]})
+    }
+    else if (command == 'neko'){
+        neko.setImage(await akaneko.neko()).setColor('Random').setDescription("Meow!")
+        message.channel.send({embeds: [neko]})
+    }
+    else if (command == 'neko'){
+        neko.setImage(await akaneko.neko()).setColor('Random').setDescription("Meow!")
+        message.channel.send({embeds: [neko]})
+    }
+    else if (command == 'sfwwallpaper'){
+        sfwwallpaper.setImage(await akaneko.wallpapers()).setColor('Random').setDescription("Meow!")
+        message.channel.send({embeds: [sfwwallpaper]})
+    }
+    else if (command == 'sfwwallpapermobile'){
+        sfwwallpapermobile.setImage(await akaneko.mobileWallpapers()).setColor('Random').setDescription("Meow!")
+        message.channel.send({embeds: [sfwwallpapermobile]})
+    }
+    else if (command == 'nsfwwallpaper'){
+        nsfwwallpaper.setImage(await akaneko.nsfw.wallpapers()).setColor('Random').setDescription("Meow!")
+        message.channel.send({embeds: [nsfwwallpaper]})
+    }
+    else if (command == 'nsfwwallpapermobile'){
+        nsfwwallpapermobile.setImage(await akaneko.nsfw.mobileWallpapers()).setColor('Random').setDescription("Meow!")
+        message.channel.send({embeds: [nsfwwallpapermobile]})
+    }
 
 })
 
