@@ -266,4 +266,12 @@ client.on("interactionCreate", (interaction) => {
     slashcmd.run(client, interaction)
 })
 
+//////////// PURGE /////////////////
+
+
+
+
+////////////////////////////////////
+
+
 client.login(process.env.TOKEN)
