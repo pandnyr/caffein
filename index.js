@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 require("dotenv").config()
 const akaneko = require("akaneko")
+const order = require("./slashcommands/order")
 
 
 const client = new Discord.Client({
@@ -59,7 +60,7 @@ module.exports = bot
         message.react("😜")
         message.channel.send("https://c.tenor.com/EalRM1BllpoAAAAC/the-batman-pattinson2021.gif")
     }
-    else if (message.content == "legend"){
+    else if (message.content == "legen"){
         message.reply("wait for it...")
         message.channel.send("-DARY!")
         message.channel.send("https://c.tenor.com/nJ3EeUPhVKkAAAAC/barny-stinson.gif")
@@ -71,7 +72,7 @@ module.exports = bot
 //////////// NSFW /////////////
 
 client.on("messageCreate", async message => {
-    if (!message.channel.nsfw) return message.channel.send("Sorry, Not NSFW Channel!")
+    if (message.content.startsWith(bot.prefix) && !message.channel.nsfw) return message.reply("Sorry, Not NSFW Channel!")
 
     const hentai = new Discord.EmbedBuilder().setTitle('NSFW')
     const ass = new Discord.EmbedBuilder().setTitle('NSFW')
@@ -237,13 +238,15 @@ client.on("messageCreate", async message => {
     }
 
 })
+//////////////////////////
 
 //////////////////////////
 const welcomeChannelId = "1011930095507750912"
+const welcome = new Discord.EmbedBuilder().setTitle('WELCOME!').setImage("https://c.tenor.com/TTUYiUL3h5kAAAAC/goku-son.gif").setColor('Random')
 
 client.on("guildMemberAdd", (member) => {
-    member.guild.channels.cache.get(welcomeChannelId).send(`<@${member.id}> Welcome to the server!`)
-    member.guild.channels.cache.get(welcomeChannelId).send(" https://c.tenor.com/TTUYiUL3h5kAAAAC/goku-son.gif")
+    welcome.setDescription(`<@${member.id}> Welcome to the server!`)
+    member.guild.channels.cache.get(welcomeChannelId).send({embeds: [welcome]})
 })
 
 
@@ -265,13 +268,5 @@ client.on("interactionCreate", (interaction) => {
 
     slashcmd.run(client, interaction)
 })
-
-//////////// PURGE /////////////////
-
-
-
-
-////////////////////////////////////
-
 
 client.login(process.env.TOKEN)

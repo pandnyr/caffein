@@ -6,11 +6,7 @@ const amounts = [
     { name: "30", value: 30 },
     { name: "50", value: 50 },
     { name: "70", value: 70 },
-    { name: "100", value: 100 },
-    { name: "500", value: 500 },
-    { name: "750", value: 750 },
-    { name: "1000", value: 1000}
-
+    { name: "100", value: 100 }
 ]
 
 
