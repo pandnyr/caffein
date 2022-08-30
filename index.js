@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 require("dotenv").config()
 const akaneko = require("akaneko")
 const order = require("./slashcommands/order")
+const RedditImageFetcher = require("reddit-image-fetcher");
 
 
 const client = new Discord.Client({
@@ -17,6 +18,7 @@ const client = new Discord.Client({
 let bot = {
     client,
     prefix: "!",
+    prefix2: "?",
     owners: ["672896669058203726"]
 }
 
@@ -238,7 +240,30 @@ client.on("messageCreate", async message => {
     }
 
 })
-//////////////////////////
+////////////MEME REDDIT//////////////
+
+
+client.on("messageCreate", async message => {
+    const memeembed = new Discord.EmbedBuilder().setTitle('Meme')
+    var command2 = message.content.toLowerCase().slice(bot.prefix2.length)
+    if (message.content.startsWith(bot.prefix2))
+        if (command2 = 'meme'){
+            RedditImageFetcher.fetch({
+                type: 'meme'
+            }).then(result => {
+                console.log(result)
+                memeembed
+                .setColor('Random')
+                .setTitle(result[0].title)
+                .setImage(result[0].image)
+                .setURL(result[0].postLink)
+                .setDescription('Upvotes: ' + result[0].upvotes + "\n" + 'Subreddit: r/' + result[0].subreddit)
+                message.channel.send({embeds: [memeembed]})
+            });
+        }
+        else {console.log('We have a problem...')}
+})
+
 
 //////////////////////////
 const welcomeChannelId = "1011930095507750912"

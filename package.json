@@ -19,6 +19,7 @@
     "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "libsodium-wrappers": "^0.7.10",
+    "reddit-image-fetcher": "^2.0.11",
     "ytdl-core": "^4.11.1"
   }
 }
