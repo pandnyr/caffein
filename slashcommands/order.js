@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js")
+const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("discord.js")
 
 const drinks = [
      { name: "Latte", value: "latte"},
@@ -14,13 +14,19 @@ const run = async (client, interaction) => {
     
     let drink = interaction.options.getString('drink')
     let member = interaction.options.getMember('member')
+    let orderembed = new EmbedBuilder().setTitle('Order').setColor('Random')
     
  
     if (!drink) return interaction.reply("There is no such drink...")
     
     try {
        // await interaction.channel.send(`${interaction.member.tag} ordered ${drink}`)
-        return interaction.reply(`${interaction.user.tag} **ordered** ${drink} for ${member.user.tag}`)
+        orderembed.setDescription(`${interaction.user.tag} **ordered** ${drink} for ${member.user.tag}`).addFields(
+            {name: '-----', value: `${interaction.user.tag}`},
+            {name: 'ordered', value: `${drink}`},
+            {name: 'for', value: `${member.user.tag}`}
+            )
+        return interaction.reply({embeds: [orderembed]})
     }
     catch(err){
         if (err){
